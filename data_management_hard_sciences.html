@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to data management in hard science</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Damien Belvèze" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="monstyle.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, inverse, middle 
+
+# Introduction to data management in hard science
+
+### Damien Belvèze
+
+&lt;small&gt; 29th of april 2022 &lt;/small&gt;
+
+&lt;!--in accordance with R usage, I did not insert any command to automatically load the packages used (install.packages), I only call these packages. If they are missing in the user's Rmarkdown environment, the user will only be prompted to install them..  
+--&gt;
+
+---
+
+background-color: #bebebe
+class: middle, center
+
+# Research Data: What are we talking about?
+
+### some definitions on data management
+
+
+
+???
+
+The speaker may display presentation notes by pressing the p key
+
+---
+
+* **research data**: "recorded objects (figures, texts, images or sounds), which are used as main sources for scientific inquiry and are generally considered by the scientific community as compulsory to valid scientific results" (OECD, 2007)
+
+
+--
+
+* **Datasets**« Aggregation (...) of raw data or intermediary data with some unity, gathered in order to form a consistent whole » (Gaillard, 2014)
+
+--
+
+* **Open Science** :
+&gt; Open Science is the practice of science in such a way that others can collaborate and contribute, where research data, lab notes and other research processes are freely available, under terms that enable reuse, redistribution and reproduction of the research and its underlying data and methods
+
+[Open Science Definition](https://www.fosteropenscience.eu/foster-taxonomy/open-science-definition).
+
+???
+
+- not only for STEM sciences
+- should always have been the paradigm of all Science since the beginning of Internet.
+
+* **research data** : 
+As a result, this term excludes :
+- preliminary analyses, 
+- plans for projects to come, 
+- peer reviews, 
+- mails from colleagues. 
+- physical objects 
+- training material
+- administrative records
+
+research data are part of the broader category of what Bruno Latour calls _inscriptions_ which means they are preliminary versions of knowledge (before publication) 
+
+* **Open Science**
+
+** reusability &amp; redistribution : see for instance how it works with code (software four freedoms : right to run (=reuse) a code whatever the purpose and freedom to redistribute copies of that code.  Richard M. Stallman)
+
+** reproducibility : see "reproducibility crisis". The Munafo manifesto states that only 50% of published results in Health Science are reproducible.
+
+---
+
+class: left, middle
+
+## Research Data: what are we talking about? 
+
+.pull-left[
+&lt;img src="images/data_narrative.jpg" height="450" /&gt;
+]
+
+.pull-right[
+
+* Raw data
+* derivative data
+* analysed data (or interpreted data)
+
+&gt; Data doesn’t say anything. Humans say things. (Andreo Jones-Rooy)
+
+]
+
+
+---
+class: left, middle
+
+## Data accessibility : an old issue
+
+As of year 1997, pioneers of the web have been wondering how data could be more structured in order to be more usable.
+
+.center[
+&lt;img src="images/5-star-steps.png" height="400" /&gt;
+]
+
+???
+
+* First level : open licence
+* Second level : structured data
+* Third level : open format
+* Fourth level : linked data (with URI)
+* Fifth level : linked with other data (by the mean of ontologies)
+
+---
+
+background-color: #fcf6ef
+color: white
+class: middle, center
+
+# What about you? What kind of data do you produce?
+
+---
+class: left, middle
+
+# Data storage, curation and publication: what is at stake?
+
+## Economic aspects
+
+&gt; Research data in digital form is increasingly used in works beyond the project for which it was originally collected, as well as in other research areas and in industry
+
+[OECD report 2007](https://www.oecd.org/fr/science/inno/38500823.pdf)
+
+???
+
+Data production may sometimes cost a lot of money (let's take research conducted in the abyss
+as an example). Raw data should be archived with great care. DNA sequencing is also very expensive. One can understand why universities or laboratories consider that their ROI will not be raised through freely sharing such data. But Science should be more open, since for a great part it is sustained by public funds.
+
+On the other part, the research funders insist on the growth lever that an improved access to research data would create (inspired by the neo-liberal concept of the _knowledge economy_).
+
+---
+class: middle, left
+
+## Health issues
+
+### Sharing medical data helps cure people
+
+collecting individual cases data for future meta-analyses has become strategic for public health
+
+&gt;no other patient was recruited for a study ; individual cases data, once gathered, were enough for the Gustave-Roussy Institute to make a meta-analysis that showed that concomitant chemotherapy is more efficient than sequential chemotherapy (Florian Naudet, Claude Pellen)
+
+Source : [The conversation](https://theconversation-com.cdn.ampproject.org/c/s/theconversation.com/amp/quand-partager-les-donnees-issues-des-essais-cliniques-permet-de-mieux-soigner-les-patients-171130)
+
+???
+
+Original quote in French: 
+&gt;Sans recruter un patient de plus, grâce à une méta-analyse sur données individuelles, l’Institut Gustave-Roussy a réussi à montrer que la chimiothérapie concomitante est plus efficace que le schéma séquentiel (Florian Naudet, Claude Pellen)
+
+---
+class: middle, center
+
+## Democracy at stake
+
+### data as a Common
+
+Obépine (research project) = measures the prevalence of Sars-Cov-2 in French waste waters - Request for access to data produced by a public entity
+
+The answer refers to the "Law for a Digital Republic" aka "Lemaire's Law" (2016) whose goal is to improve circulation of data and knowledge from public institutions to the public.
+
+[demande Dada](https://madada.fr/demande/donnees_relatives_a_la_concentra#outgoing-411)
+
+### _data_ or _capta_ ?
+
+personal consent (GDPR)
+
+If you use conversation transcripts or forms, do not forget to collect and confidentially store the consent forms for each transaction (form submission, interview) 
+
+???
+
+Common in the sense of Elinor Ostrom theory on Commons 
+
+anytime you deal with personal data, you have to submit a declaration ot treatment to your Digitial Protection Officer
+
+---
+class: left, middle
+
+# Issues related to data retention and sharing
+
+## Scientific Issues
+
+Science **reproducibility** and **reliability** are at stake 
+
+ie. [LancetGate](https://retractionwatch.com/2020/06/04/lancet-retracts-controversial-hydroxychloroquine-study/) The Lancet retracts a paper on HCQ based on data that Surgisphere refused to provide to reviewers. 
+
+Lancet stated on June 5th 2020 that...
+
+&gt; Our independent peer reviewers informed us that Surgisphere would not transfer the full dataset [...] As such, our reviewers were not able to conduct an independent and private peer review
+
+[Le Monde, 4 juin 2020](https://www.lemonde.fr/sciences/article/2020/06/04/hydroxychloroquine-trois-auteurs-de-l-etude-du-lancet-se-retractent_6041803_1650684.html)
+
+---
+
+class: middle, left
+
+## Accessing the data is a condition to reproducibility
+
+.pull-left[
+&lt;img src="images/reproducible.png" width="900" /&gt;
+]
+
+.pull-right[
+poor quality control on data
+Manifesto for reproducible science
+]
+
+---
+class: left, middle
+
+## ephemeral data
+
+.pull-left[
+&lt;img src="images/perte_donnees.png" width="600" /&gt;
+]
+
+.pull-right[
+80% of the data produced these last twenty years are lost.
+]
+
+---
+
+class: middle, left
+
+## How it should be and how it is
+
+.pull-left[
+&lt;img src="images/data_pyramid1.png" width="600" /&gt;
+]
+
+.pull-right[
+&lt;img src="images/data_pyramid2.png" width="600" /&gt;
+]
+
+(Marie Puren, 2021)
+
+???
+
+* More than 80% of the data produced is stored elsewhere than in data repositories.
+
+* In a european survey, 90% of the interviewed researchers say that they have to rely on themselves to store, archive and share their data.
+
+Source: [DATACC, Gestion des données, une nouvelle exigence, de nouvelles compétences, 2020](https://www.datacc.org/bonnes-pratiques/adopter-un-plan-de-gestion-des-donnees/gestion-des-donnees-une-nouvelle-exigence-de-nouvelles-competences/)
+
+---
+
+class: middle, left
+
+## National Plan for Open Science (S Plan)
+
+.pull-left[
+&lt;img src="images/PNSO.png" width="800" /&gt;
+]
+
+.pull-right[
+
+* make open access by default for publications
+
+* **Plan S strongly encourages that research data and other research outputs are made as open as possible and as closed as necessary**
+
+* code that underlies the publication should be made available in external repositories
+
+
+[Plan S: principles and implementations](https://www.coalition-s.org/addendum-to-the-coalition-s-guidance-on-the-implementation-of-plan-s/principles-and-implementation)
+
+]
+
+---
+
+background-color: #bebebe
+class: middle, center
+
+# FAIR principles
+
+## Findable / Accessible / Interoperable / Reusable
+
+&lt;img src="images/FAIR2.png" width="500" /&gt;
+
+---
+
+class: left, middle
+
+## How to make your data _findable_?
+
+* dataset -&gt; DOI (exemple : [https://doi.org/10.5281/zenodo.5903186](https://doi.org/10.5281/zenodo.5903186))
+
+* data repositories should be well indexed by search engines like [Google data set search](https://datasetsearch.research.google.com/) (SKOS implementation improves this referencing) 
+
+---
+
+class: middle, left
+
+## How to make my data accessible ?
+
+&gt; as open as possible, as close as necessary
+
+Be explicit on how the dataset could be reused and shared with others. Choose a licence adapted to these conditions
+
+???
+
+* If the data are made open : choose a creative commons licence
+
+* when data are accessible on demand : explain how to make a request and whom this request should be sent to.
+
+
+Data that should not be shared
+
+* secret defense
+* government proceedings
+* corporate secrecy
+
+data that can be shared after anonymisation / pseudonymisation 
+
+* personnal data (included sensitive data)
+
+---
+
+class: left, middle
+
+# Citation advantage
+
+&gt; We also find an association between articles that include statements that link to data in a repository and **up to 25.36% (± 1.07%) higher citation impact** on average (Colavizza, Hrynaszkiewicz, 2020)
+
+&lt;img src="images/data_citation_advantage.png" width="800" /&gt;
+
+---
+
+class: left, middle
+
+## How to make my data interoperable?
+
+* Use open formats for your data
+
+* use ontologies and controlled languages (thesaurus) that are standard in your field
+
+---
+
+class: left, middle
+
+# And why I would share MY data?
+
+.pull-left[
+&lt;img src="images/harpagon.jpg" width="600" /&gt;
+]
+
+.pull-right[
+
+* This is a lot of work to collect them!
+
+* These data are a competitive asset for my laboratory
+
+* Loi Lemaire : the public pre-empts the data to prevent it from becoming the property of private actors (avoiding enclosures)
+
+* Unlike her works, the data actually belong to the researcher's institution, they are not hers. 
+]
+
+---
+background-color: #bebebe
+class: middle, center
+
+# How to write a data management plan (DMP) 
+
+---
+
+class: left, center
+
+## DMP is compulsory for any research contract with National Research Agency (ANR)
+
+## must be submitted 6 months after the signature of the contract
+
+--
+
+.red[
+The DMP states what data will be collected and how they will be processed to be made FAIR compliant
+]
+
+---
+
+class: left, middle
+
+# where should you store your data?
+
+.red[
+** Not on the publisher's website**
+]
+
+* data repositories give you more place and freedom to describe your data
+
+* publisher's policy may impede free reusability or sharing of your data (according to Open Science principles)
+
+* publishers may have interest to make money with your data or use them to build products for sale (see for instance Elsevier and Scival)
+
+---
+class: left, middle
+
+# Where should we store our data then?
+
+* [re3data.org](https://re3data.org) (waiting for _recherche data gouv_ next summer)
+
+* wiser to load them on a repository **before the publication of the related article** (once the paper is published, no possibility to make a link from the publisher website to the dataset on the repository) 
+it it's too late, you can still make a link from the open access repository (HAL) where you have deposited your AAM to the dataset.
+
+* if your data are not ready to be deposited, you may nevertheless reserve a place on a data repository to get a permanent ID to the dataset by just loading a file (data description for instance)
+
+
+* if you use your own data, provide a space before the bibliography entitled "data availability" for instance (and put here the DOI of the datasets)
+
+* if you reuse date from another project, cite datasets in the bibliography
+
+---
+
+# consider the cost of data preservation
+
+* The cost of data preservation should be balanced with the cost of production of a new dataset
+
+
+* if your data are expensive to collect, you should archive them for longer, if the cost of preservation are higher than the cost of production, consider collecting new data
+
+---
+class: middle, left
+
+# Store enough data to make reproducibility possible but no more : 
+
+* If your processes are well documented, you will be able to reproduce intermediary data from raw data (in this case, only raw data have to be stored in order to minimize the environmental footprint)
+
+* computational data : virtualization (Docker) and versioning (github)
+
+&gt; every state of data that can be reproduced may not be stored. If we need intermediary data, and if every process is properly documented, it will only cost some computing time &amp; resources to get them from the raw data and thus you will have spared the cost of storage for a large amount of refined data (Olivier Collin)
+
+---
+class: left, middle
+
+# Why it is so important to describe your data
+
+Write and make available at the root of your folder a readme file, with these informations: 
+
+- file organisation and localisation in the folder
+
+- definition of the variables in the data and explanations about how the observations were conducted 
+
+- details on the experimentation settings
+
+- details on the data processing (which operations, with what tools...)
+
+---
+class: middle, left
+
+# description : ontologies and controlled languages. 
+
+## Ontologies : 
+
+- [genomic ontologies](http://geneontology.org/) 
+- [biological ontologies](https://www.ebi.ac.uk/ols/ontologies/uberon) 
+
+## thesaurus, controlled vocabularies :
+
+- [MeSH](https://www.ncbi.nlm.nih.gov/mesh/?) (médecine)
+- [INRAE thesaurus](https://consultation.vocabulaires-ouverts.inrae.fr/thesaurus-inrae/fr/)
+---
+class: left, center
+
+## Documenting your data make them more reusable (and prevent bad interpretation)
+
+Lack of context = no reusability
+
+&lt;img src="images/data_context.png" height="450" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: left, middle
+
+# data : from a privacy perspective
+
+anonymisation # pseudonymisation
+
+Tools: [Amnesia](https://amnesia.openaire.eu/download.html) et [Arx](https://arx.deidentifier.org/)
+
+The more pseudonomysed personal data you have in a dataset, higher is the risk of a [reidentification](https://cpg.doc.ic.ac.uk/observatory/explore) 
+
+---
+class: left, middle, inverse
+
+# credits
+
+This presentation was widely inspired by : 
+
+* Thierry Fournier, [introduction aux données de la recherche en sciences exactes](http://formadoct.doctorat-bretagneloire.fr/ld.php?content_id=33694689), 2022
+
+* Cécile Arènes, [Rédiger un plan de gestion des données](https://zenodo.org/record/5559598), 2021
+
+---
+
+class: left, middle, inverse
+
+# bibliography
+
+&lt;small&gt;
+Blanc, I. (2020, novembre 20). Données relatives à la concentration de SARS-CoV-2 dans les eaux usées—Une demande d’accès à l’information à Ministère de l’enseignement supérieur, de la recherche et de l’innovation. Consulté 14 avril 2022, à l’adresse Ma Dada website: https://madada.fr/demande/donnees_relatives_a_la_concentra
+
+Brunori, G. (2020). Data Management Plan. https://doi.org/10.5281/zenodo.3664215
+Colavizza, G., Hrynaszkiewicz, I., Staden, I., Whitaker, K., &amp; McGillivray, B. (2020). The citation advantage of linking publications to research data. PLOS ONE, 15(4), e0230416. https://doi.org/10.1371/journal.pone.0230416
+
+Munafò, M. R., Nosek, B. A., Bishop, D. V. M., Button, K. S., Chambers, C. D., Percie du Sert, N., … Ioannidis, J. P. A. (2017). A manifesto for reproducible science. Nature Human Behaviour, 1(1), 1‑9. https://doi.org/10.1038/s41562-016-0021
+
+OCDE. (2007). Principes et lignes directrices de l’OCDE pour l’accès aux données de la recherche financée sur fonds publics. Consulté à l’adresse https://www.oecd.org/fr/science/inno/38500823.pdf
+
+Sandve, G. K., Nekrutenko, A., Taylor, J., &amp; Hovig, E. (2013). Ten Simple Rules for Reproducible Computational Research. PLOS Computational Biology, 9(10), e1003285. https://doi.org/10.1371/journal.pcbi.1003285
+
+« The Lancet » annonce le retrait de son étude sur l’hydroxychloroquine. (2020, juin 4). Le Monde.fr. Consulté à l’adresse https://www.lemonde.fr/sciences/article/2020/06/04/hydroxychloroquine-trois-auteurs-de-l-etude-du-lancet-se-retractent_6041803_1650684.html
+
+Vines, T. H., Albert, A. Y. K., Andrew, R. L., Débarre, F., Bock, D. G., Franklin, M. T., … Rennison, D. J. (2014). The Availability of Research Data Declines Rapidly with Article Age. Current Biology, 24(1), 94‑97. https://doi.org/10.1016/j.cub.2013.11.014
+
+&lt;/small&gt;
+
+---
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
